@@ -1,0 +1,23 @@
+Review questions 35, 37, 38, 61, 62, 63, and 64
+
+35. Output values: 1.0, 2.4, 7.2, 5.3
+
+37. if not(Value1 < Value2)
+           then statement1
+    else
+           statement2
+    end if       
+    
+38. No
+
+61. Percival is the truthteller and Llewllyn is a liar.  Assuming that Percival is a liar makes them both truthtellers,
+    but they can't lie if they're truthtellers.  So Percival has to be a truthteller.
+    
+62. Both are truthtellers?  I'm really confused with this one.  I don't see enough information to determine what they are.
+
+63. Rothwold is a truthteller and Grymlin is a truthteller.  Assuming Rothewold is a liar, statement A, "I am a liar", would
+    be true, and statement B, "Grymlin is a truthteller", would have to be false.  But since it was an "or" arguement,
+    one of the statements needs to be true and neither can be true if Rothwold is a liar, so he's a truthteller.
+
+64. Gwendolyn is a liar and Merrilaine is a liar.  Assuming Gwendolyn is a truthteller makes her a liar, so she can't 
+    be a truthteller.  That means she lied about Merrilaine being a truthteller, so Merrilaine has to be a liar.

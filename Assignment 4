@@ -1,8 +1,15 @@
 "Show that p->q and q' -> p' are logically equivalent"
-If p does not result in q, then q' can't result in 'p because q' is p and p' is q.
+p -> q <=> q' -> p'
+p' v q <=> q'' v p' Implication
+p' v q <=> q v p' Double Negation
+p' v q <=> p' v q Commutative
 
 "Show that (p->r) ^ (q->r) <=> (p v q) -> r"
-If p and q imply r, then p or q will also imply r.
+(p->r) ^ (q->r) <=> (p v q) -> r
+(p->r) ^ (q->r) <=> (p v q)' v r Implication
+(p->r) ^ (q->r) <=> (p' ^ q') v r De Morgan's Law
+(p->r) ^ (q->r) <=> (p' v r) ^ (q' v r) Distribution
+(p->r) ^ (q->r) <=> (p->r) ^ (q->r) Implication
 
 (p->q) ^ (q->p) <=> (q->p)'
 

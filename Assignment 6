@@ -1,0 +1,42 @@
+ /* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int inputValue;
+		Scanner s = new Scanner(System.in);
+		
+		do {
+			System.out.print("Enter in an integer: ");
+			inputValue = s.nextInt();
+			System.out.println();
+		
+			if (s.nextChar() == 'q')
+			{
+				System.out.println("Exiting");
+			}
+			else if (s.hasNextInt())
+			{
+				System.out.println("ERROR!  Integer not entered!");
+				s.next();
+			}
+			else
+			{
+				if (inputValue % 2 == 0)
+				{
+					System.out.println("Your number was even!");
+				}
+				else
+				{
+					System.out.println("Your number was odd!");
+				}
+			}
+		} while (s.nextChar() != 'q');
+	}
+}

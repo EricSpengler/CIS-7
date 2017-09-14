@@ -1,0 +1,16 @@
+18a. ∀x [S(x) -> I(x)]
+18b. ∃x [(S(x) ^ I(x)) -> M(x)]
+18c. ∀x [M(x) -> (S(x) ^ I(x)')]
+18d. ∀x [(S(x) ^ I(x)) -> M(x)]
+
+25a. John is handsome and Kathy loves John.
+25b. All men are handsome.
+25c. All women love handsome men.
+25d. Some handsome men love Kathy.
+25e. Some pretty women love all handsome men.
+25f. John loves all pretty women.
+
+34a. If some x and some other x, then x is the same.
+34b. A y is less than some x therefore a x is less than some y
+34c. If for all x there is x, then for some x there is all x
+34d. For all not x, then not for all x

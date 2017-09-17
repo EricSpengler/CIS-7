@@ -1,42 +1,41 @@
- /* package whatever; // don't place package name! */
-
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-/* Name of the class has to be "Main" only if the class is public. */
 class Ideone
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
-		int inputValue;
+		String inputValue;
 		Scanner s = new Scanner(System.in);
 		
-		do {
-			System.out.print("Enter in an integer: ");
-			inputValue = s.nextInt();
+		do
+		{
+			System.out.print("Enter in a number (or 'q' to exit): ");
+			inputValue = s.nextLine();
 			System.out.println();
 		
-			if (s.nextChar() == 'q')
+			try
 			{
-				System.out.println("Exiting");
-			}
-			else if (s.hasNextInt())
-			{
-				System.out.println("ERROR!  Integer not entered!");
-				s.next();
-			}
-			else
-			{
-				if (inputValue % 2 == 0)
+				if (inputValue.charAt(0) == 'q')
 				{
-					System.out.println("Your number was even!");
+					System.out.println("Exiting.");
 				}
-				else
+				else 
 				{
-					System.out.println("Your number was odd!");
+					if (Integer.parseInt(inputValue) % 2 == 0)
+					{
+						System.out.println("Your number is even.");
+					}
+					else
+					{	
+						System.out.println("Your number is odd.");
+					}
 				}
+			} catch (NumberFormatException e)
+			{
+				System.out.println("ERROR!  Input is invalid.");
 			}
-		} while (s.nextChar() != 'q');
+		} while (inputValue.charAt(0) != 'q');
 	}
 }

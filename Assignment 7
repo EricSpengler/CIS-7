@@ -1,0 +1,38 @@
+Prove:  If n = 25, 100, or 169, then n is a perfect square and is the sum of two perfect squares.  
+Indicate which method of proof you used.
+
+Proof by Exhaustion:
+sqrt(25) = 5; 25 = 9 + 16; sqrt(9) = 3; sqrt(16) = 4;
+sqrt(100) = 10; 100 = 64 + 36; sqrt(64) = 8; sqrt(36) = 6;
+sqrt(169) = 13; 169 = 144 + 25; sqrt(144) = 12; sqrt(25) = 5;
+
+Prove:  The sum of two odd integers is even.  
+Hint: By definition, even integers can be expressed as 2n, thus odd integers can be expressed as 2n + 1	
+
+x is an odd integer ^ y is an odd integer
+∀x (x is odd -> ∃i (i is an integer ^ x = 2i + 1))
+∀y (y is odd -> ∃i (i is an integer ^ y = 2i - 1))
+x + y = (2i + 1) + (2i - 1)
+x + y = 4i
+x + y = 2(2i)
+2i is an even integer -> 2(2i) is even
+x + y is even
+
+Prove:  The sum of an even integer and it's square is even
+
+x is an even integer
+∀x (x is even -> ∃i (i is an integer ^ x = 2i))
+x*x + x = (2i)(2i) + 2i
+x*x + x = 2(2i*i + i)
+x*x + x = 2i(2i + 1)
+2i is even ^ 2i + 1 is an integer
+x*x + x is even
+
+Prove by Contradiction: If n squared is odd, then n is odd
+
+n is even -> n^2 is even
+∀n (n is even -> ∃i (i is an integer ^ n = 2i))
+n*n = (2i)(2i)
+n*n = 2(2i*i)
+i is an integer ^ i*i is an integer
+n*n is even

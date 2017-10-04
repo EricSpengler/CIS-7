@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int GreatestCommonDenominator(int a, int b);
+
+int main() {
+	int userNumberA;
+	int userNumberB;
+	int gcdValue;
+	
+	cout << "Enter in 2 values greater than zero: ";
+	cin >> userNumberA >> userNumberB;
+	cout << endl;
+	
+	if (userNumberA > userNumberB)
+	{
+		gcdValue = GreatestCommonDenominator(userNumberA, userNumberB);
+	}
+	else
+	{
+		gcdValue = GreatestCommonDenominator(userNumberB, userNumberA);
+	}
+	
+	cout << "Greatest common denominator: " << gcdValue << endl;
+	
+	return 0;
+}
+
+int GreatestCommonDenominator(int a, int b)
+{
+	if (b == 0)
+	{
+		return a;
+	}
+	else
+	{
+		GreatestCommonDenominator(b, (a % b));
+	}
+}

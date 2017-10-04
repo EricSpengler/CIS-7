@@ -34,6 +34,6 @@ int GreatestCommonDenominator(int a, int b)
 	}
 	else
 	{
-		GreatestCommonDenominator(b, (a % b));
+		return GreatestCommonDenominator(b, (a % b));
 	}
 }

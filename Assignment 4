@@ -14,3 +14,5 @@ p' v q <=> p' v q Commutative
 (p->q) ^ (q->p) <=> (q->p)'
 
 (p'->q')' -> (q'->p')'
+
+

@@ -1,1 +1,35 @@
-Towers of Hanoi
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+void towersOfHanoi(int disks, char fromTower, char toTower, char intermediaryTower);
+
+int main()
+{
+	int disks;
+
+	cout << "Enter in how many disks to use: ";
+	cin >> disks;
+	cout << endl;
+
+	towersOfHanoi(disks, 'A', 'B', 'C');
+
+    return 0;
+}
+
+void towersOfHanoi(int disks, char fromTower, char toTower, char intermediaryTower)
+{
+	if (disks == 1)
+	{
+		cout << "Move disk 1 from tower " << fromTower << " to tower " << toTower << endl;
+		
+		return;
+	}
+
+	towersOfHanoi(disks - 1, fromTower, intermediaryTower, toTower);
+
+	cout << "Move disk " << disks << " from pillar " << fromTower << " to pillar " << toTower << endl;
+
+	towersOfHanoi(disks - 1, intermediaryTower, toTower, fromTower);
+}

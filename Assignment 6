@@ -39,3 +39,4 @@ class Ideone
 		} while (inputValue.charAt(0) != 'q');
 	}
 }
+

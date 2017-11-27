@@ -1,6 +1,138 @@
-- [ ] Write a program that will take an integer input and then allow the user to either calculate the factorial of that number or get the fibonacci number represented by that number
-- [ ] Both functions in the above step should be recursive
-- [ ] For the factorial function, simulate a call stack by outputting what the contents of the real call stack might look like on each recursive call of the factorial function
-- [ ] Additional clarification was give in class on 10/16, 10/18, and 10/23.  If you did not attend or still need more clarification please see me after any class.	
-- [ ] Upload your assignment to GitHub
-- [ ] Email james.wilson@rccd.edu with the url to the source code on GitHub	
+#include "stdafx.h"
+#include "list.h"
+#include <iostream>
+
+using namespace std;
+
+int factorial(int a, list stack);
+int fibanacci(int a);
+
+int main()
+{
+	list stack;
+	int number;
+	char input;
+
+	cout << "Enter in a number: ";
+	cin >> number;
+	cout << endl;
+
+	cout << "Selct 'A' for factorial or 'B' for fibanacci." << endl;
+	cout << "Selection: ";
+	cin >> input;
+	cout << endl;
+
+	switch (input)
+	{
+		case 'A':
+		case 'a':
+			cout << "The factorial of the number you input is: " << factorial(number, stack) << endl;
+			break;
+		case 'B':
+		case 'b':
+			cout << "The fibanacci value for the number you input is: " << fibanacci(number) << endl;
+			break;
+	}
+
+	return 0;
+}
+int factorial(int a, list stack)
+{
+	stack.push("factorial:" + to_string(a));
+	stack.display();
+
+	if (a <= 1)
+	{
+		return 1;
+	}
+
+	return a * factorial(a - 1, stack);
+}
+int fibanacci(int a)
+{
+	if (a <= 1)
+	{
+		return a;
+	}
+	
+	return fibanacci(a - 1) + fibanacci(a - 2);
+}
+
+==========================================================================================
+list.h
+
+#include<stdio.h>
+#include<stdlib.h>
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+struct node
+{
+	string data;
+	node *next;
+};
+
+class list
+{
+private:
+	node *head;
+	node *tail;
+
+public:
+	list::list()
+	{
+		head = NULL;
+		tail = NULL;
+	}
+
+	void list::push(string value)
+	{
+		node *temp = new node;
+		temp->data = value;
+		temp->next = NULL;
+
+		if (head == NULL)
+		{
+			head = temp;
+			tail = temp;
+			temp = NULL;
+		}
+		else
+		{
+			tail->next = temp;
+			tail = temp;
+		}
+	}
+
+	void list::deleteNode()
+	{
+		node *current = new node;
+		node *previous = new node;
+		current = head;
+
+		while (current->next != NULL)
+		{
+			previous = current;
+			current = current->next;
+		}
+
+		tail = previous;
+		previous->next = NULL;
+		
+		delete current;
+	}
+
+	void list::display()
+	{
+		node *temp = new node;
+		temp = head;
+
+		while (temp != NULL)
+		{
+			cout << temp->data << endl;
+			temp = temp->next;
+		}
+	}
+};
